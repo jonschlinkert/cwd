@@ -1,7 +1,7 @@
 /**
  * cwd
  * https://github.com/jonschlinkert/cwd
- * Copyright (c) 2013 Jon Schlinkert, contributors.
+ * Copyright (c) 2014 Jon Schlinkert, contributors.
  * Licensed under the MIT license.
  */
 
