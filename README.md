@@ -1,6 +1,6 @@
 # cwd [![NPM version](https://badge.fury.io/js/cwd.png)](http://badge.fury.io/js/cwd)
 
-> Get the current working directory relative to the calling module.
+> For Node.js projects, set the CWD (current working directory) to the same directory as package.json.
 
 ## Quickstart
 
@@ -11,7 +11,7 @@ var cwd = require('cwd');
 ## Usage
 
 ```js
-var pkg = require(path.join(cwd, 'package.json'));
+var foo = require(path.join(cwd, 'one/two.js'));
 ```
 
 ## Author
