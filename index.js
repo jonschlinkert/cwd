@@ -9,5 +9,6 @@ var findup = require('findup-sync');
 
 var cwd = module.exports = function() {
   var filepath = path.join.apply(path, arguments);
-  return path.dirname(findup('package.json', {cwd: process.cwd()}));
+  var base = path.dirname(findup('package.json', {cwd: process.cwd()}));
+  return path.resolve(base, filepath || '');
 };
