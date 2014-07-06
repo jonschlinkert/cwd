@@ -5,10 +5,14 @@
  */
 
 var path = require('path');
+var normalize = require('normalize-path');
 var findup = require('findup-sync');
+var relative = require('relative');
 
-var cwd = module.exports = function() {
-  var filepath = path.join.apply(path, arguments);
-  var base = path.dirname(findup('package.json', {cwd: process.cwd()}));
-  return path.resolve(base, filepath || '').replace(/\\/g, '/');
+module.exports = function cwd() {
+  var filepath = path.join.apply(path, [].slice.call(arguments));
+  var base = path.dirname(findup('package.json', {
+    cwd: process.cwd()
+  }));
+  return relative(path.resolve(base, filepath || ''));
 };
