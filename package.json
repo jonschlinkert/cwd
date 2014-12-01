@@ -1,7 +1,7 @@
 {
   "name": "cwd",
-  "description": "Easily set the CWD (current working directory) to the same directory as package.json in Node.js projects.",
-  "version": "0.3.7",
+  "description": "Node.js util for easily getting the current working directory of a project based on package.json or the given path.",
+  "version": "0.4.0",
   "main": "index.js",
   "homepage": "https://github.com/jonschlinkert/cwd",
   "author": {
@@ -21,14 +21,19 @@
       "url": "https://github.com/jonschlinkert/cwd/blob/master/LICENSE-MIT"
     }
   ],
+  "engines": {
+    "node": ">=0.8"
+  },
+  "scripts": {
+    "test": "mocha -R spec"
+  },
   "dependencies": {
-    "findup-sync": "~0.1.3",
-    "normalize-path": "^0.1.1"
+    "look-up": "^0.2.0"
   },
   "devDependencies": {
-    "chai": "~1.9.1",
     "mocha": "~1.18.2",
-    "verb": "~0.2.0"
+    "normalize-path": "^0.3.0",
+    "should": "^4.3.0"
   },
   "keywords": [
     "current",
@@ -52,11 +57,5 @@
     "resolve",
     "resolved",
     "working"
-  ],
-  "engines": {
-    "node": ">=0.8"
-  },
-  "scripts": {
-    "test": "mocha -R spec"
-  }
+  ]
 }
