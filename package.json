@@ -1,8 +1,7 @@
 {
   "name": "cwd",
   "description": "Node.js util for easily getting the current working directory of a project based on package.json or the given path.",
-  "version": "0.4.0",
-  "main": "index.js",
+  "version": "0.5.0",
   "homepage": "https://github.com/jonschlinkert/cwd",
   "author": {
     "name": "Jon Schlinkert",
@@ -15,17 +14,19 @@
   "bugs": {
     "url": "https://github.com/jonschlinkert/cwd/issues"
   },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/jonschlinkert/cwd/blob/master/LICENSE-MIT"
-    }
+  "license": {
+    "type": "MIT",
+    "url": "https://github.com/jonschlinkert/cwd/blob/master/LICENSE"
+  },
+  "files": [
+    "index.js"
   ],
+  "main": "index.js",
   "engines": {
     "node": ">=0.8"
   },
   "scripts": {
-    "test": "mocha -R spec"
+    "test": "mocha"
   },
   "dependencies": {
     "look-up": "^0.2.0"

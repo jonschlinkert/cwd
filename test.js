@@ -1,19 +1,22 @@
 /*!
  * cwd <https://github.com/jonschlinkert/cwd>
  *
- * Copyright (c) 2014 Jon Schlinkert, contributors.
- * Licensed under the MIT License
+ * Copyright (c) 2014-2015, Jon Schlinkert.
+ * Licensed under the MIT License.
  */
 
 'use strict';
 
-var should = require('should');
-var path   = require('path');
+var path = require('path');
 var normalize   = require('normalize-path');
 var cwd = require('./');
+require('should');
 
 describe('cwd:', function() {
   it('should return the absolute cwd', function() {
+    normalize(cwd()).should.equal(normalize(process.cwd()));
+    normalize(cwd()).should.equal(normalize(process.cwd()));
+    normalize(cwd()).should.equal(normalize(process.cwd()));
     normalize(cwd()).should.equal(normalize(process.cwd()));
   });
 
