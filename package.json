@@ -1,7 +1,7 @@
 {
   "name": "cwd",
   "description": "Node.js util for easily getting the current working directory of a project based on package.json or the given path.",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "homepage": "https://github.com/jonschlinkert/cwd",
   "author": {
     "name": "Jon Schlinkert",
