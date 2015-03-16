@@ -29,7 +29,7 @@ var cache = {};
  * @api public
  */
 
-function cwd(filepath) {
+function cwd() {
   var fp = path.resolve.apply(path, [].concat.apply([], arguments));
   if (cache.hasOwnProperty(fp)) {
     return cache[fp];

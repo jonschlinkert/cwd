@@ -7,6 +7,7 @@
 
 'use strict';
 
+/* deps: mocha, should, normalize-path */
 var path = require('path');
 var normalize   = require('normalize-path');
 var cwd = require('./');
