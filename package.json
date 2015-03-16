@@ -29,12 +29,12 @@
     "test": "mocha"
   },
   "dependencies": {
-    "look-up": "^0.2.0"
+    "look-up": "^0.7.0"
   },
   "devDependencies": {
-    "mocha": "~1.18.2",
-    "normalize-path": "^0.3.0",
-    "should": "^4.3.0"
+    "mocha": "^2.2.1",
+    "normalize-path": "^1.0.0",
+    "should": "^5.2.0"
   },
   "keywords": [
     "current",
