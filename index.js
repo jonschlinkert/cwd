@@ -31,6 +31,7 @@ var cache = {};
 
 function cwd() {
   var fp = path.resolve.apply(path, [].concat.apply([], arguments));
+
   if (cache.hasOwnProperty(fp)) {
     return cache[fp];
   }
@@ -38,7 +39,7 @@ function cwd() {
   try {
     var res = lookup('package.json', {cwd: fp});
     var base = res ? path.dirname(res) : '';
-    return (cache[fp] = path.resolve(base, fp));
+    return (cache[fp] = base);
   } catch (err) {
     return (cache[fp] = fp);
   }
