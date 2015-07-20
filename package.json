@@ -1,23 +1,14 @@
 {
   "name": "cwd",
-  "description": "Node.js util for easily getting the current working directory of a project based on package.json or the given path.",
-  "version": "0.6.0",
+  "description": "Easily get the CWD (current working directory) of a project based on package.json, optionally starting from a given path. (Node.js/javascript util)",
+  "version": "0.7.0",
   "homepage": "https://github.com/jonschlinkert/cwd",
-  "author": {
-    "name": "Jon Schlinkert",
-    "url": "https://github.com/jonschlinkert"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/jonschlinkert/cwd.git"
-  },
+  "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+  "repository": "jonschlinkert/cwd",
   "bugs": {
     "url": "https://github.com/jonschlinkert/cwd/issues"
   },
-  "license": {
-    "type": "MIT",
-    "url": "https://github.com/jonschlinkert/cwd/blob/master/LICENSE"
-  },
+  "license": "MIT",
   "files": [
     "index.js"
   ],
@@ -29,28 +20,19 @@
     "test": "mocha"
   },
   "dependencies": {
-    "look-up": "^0.7.0"
+    "look-up": "^0.7.1"
   },
   "devDependencies": {
     "mocha": "^2.2.1",
-    "normalize-path": "^1.0.0",
-    "should": "^5.2.0"
+    "normalize-path": "^1.0.0"
   },
   "keywords": [
     "current",
     "cwd",
-    "dep",
-    "deps",
     "dir",
     "directory",
     "file",
     "filepath",
-    "files",
-    "fp",
-    "fs",
-    "glob",
-    "node",
-    "npm",
     "path",
     "paths",
     "process",
@@ -58,5 +40,17 @@
     "resolve",
     "resolved",
     "working"
-  ]
+  ],
+  "verb": {
+    "related": {
+      "list": [
+        "is-absolute",
+        "is-relative",
+        "relative",
+        "global-paths",
+        "global-prefix",
+        "global-modules"
+      ]
+    }
+  }
 }
