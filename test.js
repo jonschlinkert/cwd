@@ -1,15 +1,8 @@
-/*!
- * cwd <https://github.com/jonschlinkert/cwd>
- *
- * Copyright (c) 2014-2015, Jon Schlinkert.
- * Licensed under the MIT License.
- */
-
 'use strict';
 
-/* deps: mocha */
-var assert = require('assert');
+require('mocha');
 var path = require('path');
+var assert = require('assert');
 var normalize = require('normalize-path');
 var cwd = require('./');
 
