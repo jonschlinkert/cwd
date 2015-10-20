@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "lazy-cache": "^0.2.3",
-    "look-up": "^0.7.1"
+    "look-up": "^0.8.1"
   },
   "devDependencies": {
     "mocha": "^2.2.1",
