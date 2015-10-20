@@ -7,7 +7,7 @@
 
 var path = require('path');
 var lazy = require('lazy-cache')(require);
-lazy('look-up');
+lazy('look-up', 'lookup');
 
 /**
  * Expose `cwd`
@@ -36,8 +36,11 @@ function cwd() {
     return cache[fp];
   }
   try {
-    var res = lazy.lookup('package.json', {cwd: fp});
-    var base = res ? path.dirname(res) : '';
+    if (/package\.json$/.test(fp) && fs.existsSync(fp)) {
+      return (cache[fp] = fp);
+    }
+    var filepath = lazy.lookup('package.json', {cwd: fp});
+    var base = filepath ? path.dirname(filepath) : '';
     return (cache[fp] = path.resolve(base, fp));
   } catch (err) {
     return (cache[fp] = fp);
