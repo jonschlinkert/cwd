@@ -41,7 +41,7 @@ function cwd(filepath) {
     if (/package\.json$/.test(fp) && fs.accessSync(fp)) {
       return (cache[fp] = fp);
     }
-    var filepath = findPkg({cwd: fp});
+    var filepath = findPkg.sync(fp);
     var base = filepath ? path.dirname(filepath) : '';
     return (cache[fp] = path.resolve(base, fp));
   } catch (err) {
