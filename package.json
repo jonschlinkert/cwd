@@ -20,11 +20,10 @@
     "test": "mocha"
   },
   "dependencies": {
-    "lazy-cache": "^0.2.3",
-    "look-up": "^0.8.1"
+    "find-pkg": "^0.1.0"
   },
   "devDependencies": {
-    "mocha": "^2.2.1",
+    "mocha": "*",
     "normalize-path": "^1.0.0"
   },
   "keywords": [
