@@ -7,44 +7,45 @@
 
 var path = require('path');
 var findPkg = require('find-pkg');
+var exists = require('fs-exists-sync');
 
 /**
- * Expose `cwd`
- */
-
-module.exports = cwd;
-
-/**
- * Cache filepaths to prevent hitting the file system
- * for multiple lookups for the exact same path.
+ * Cache lookups to prevent hitting the file system
+ * more than once for the same path.
  */
 
 var cache = {};
 
 /**
- * Uses [look-up] to resolve the absolute path to the root of a project.
+ * Uses [find-pkg][] to resolve the absolute path to the root/working directory of a project.
  *
  * @param {String|Array} `filepath` The starting filepath. Can be a string, or path parts as a list of arguments or array.
  * @return {String} Resolve filepath.
  * @api public
  */
 
-function cwd(filepath) {
-  var fp = path.resolve(filepath || '');
+module.exports = function(filename) {
+  var filepath = path.resolve(filename || '');
+
   if (arguments.length > 1) {
-    fp = path.resolve.apply(path, [].concat.apply([], arguments));
+    filepath = path.resolve.apply(path, arguments);
   }
-  if (cache.hasOwnProperty(fp)) {
-    return cache[fp];
+
+  if (cache.hasOwnProperty(filepath)) {
+    return cache[filepath];
   }
-  try {
-    if (/package\.json$/.test(fp) && fs.accessSync(fp)) {
-      return (cache[fp] = fp);
-    }
-    var filepath = findPkg.sync(fp);
-    var base = filepath ? path.dirname(filepath) : '';
-    return (cache[fp] = path.resolve(base, fp));
-  } catch (err) {
-    return (cache[fp] = fp);
+
+  if (path.basename(filepath) === 'package.json' && exists(filepath)) {
+    cache[filepath] = filepath;
+    return filepath;
   }
-}
+
+  var pkgPath = findPkg.sync(filepath);
+  if (pkgPath) {
+    return (cache[filepath] = path.resolve(path.dirname(pkgPath), filepath));
+  }
+
+  if (exists(filepath)) {
+    return (cache[filepath] = filepath);
+  }
+};

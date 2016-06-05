@@ -23,6 +23,10 @@ describe('cwd:', function() {
     assert.equal(normalize(cwd(__filename)), absolute('test.js'));
   });
 
+  it('should work with multiple arguments', function() {
+    assert.equal(normalize(cwd('.', 'package.json')), absolute('package.json'));
+  });
+
   it('should return the absolute path relative to the cwd', function() {
     assert.equal(normalize(cwd('fixtures', 'a', 'b', 'c')), absolute('fixtures/a/b/c'));
   });
